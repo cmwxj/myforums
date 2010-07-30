@@ -24,7 +24,7 @@ html > body {
 
 .superHeader {
 	color: rgb(130, 128, 154);
-    background-color: rgb(66, 50, 33);
+    background-color:#ddd;
 	text-align: right;
 	margin: 0;
 	padding: 0.5ex 10px;
@@ -121,7 +121,7 @@ p {
 
 .midHeader {
 	color: lightgray;
-	background-color:#444;
+	background-color:#bd7;
 	margin: 0;
 	padding: 0.26ex 10px;
 }
