@@ -1,0 +1,23 @@
+<p>
+  <b>主题：</b>
+  <%=h @reply.topic %>
+</p>
+
+<p>
+  <b>用户名：</b>
+  <%=h @reply.user %>
+</p>
+
+<p>
+  <b>标题：</b>
+  <%=h @reply.subject %>
+</p>
+
+<p>
+  <b>正文：</b>
+  <%= @reply.body %>
+</p>
+
+
+<%= link_to '编辑', edit_reply_path(@reply) %> |
+<%= link_to '返回', replies_path %>

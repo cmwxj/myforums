@@ -1,0 +1,11 @@
+== Welcome to Rails
+这是一个基于rails的开源论坛。My first project with rails.
+
+== Getting Started
+
+1. 配置数据库文件在db/config
+2. 配置gmail邮箱密码在config/environments/development.rb
+3. rake db:create:all 
+4. rake db:migrate
+5. ruby script/server
+

@@ -1,0 +1,11 @@
+#/app/views/replies/edit.html.erb
+
+<h1>编辑回复</h1>
+
+<%= error_messages_for :reply %>
+
+<%= render :partial => @reply, :locals => { :button_name => "提交" } %>
+
+<%= link_to '显示', [@topic, @reply] %> |
+<%= link_to '返回', replies_path %>
+

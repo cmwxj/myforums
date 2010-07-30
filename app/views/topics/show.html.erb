@@ -1,0 +1,26 @@
+<h2>讨论区</h2>-———— <%=h @forum.name %></h2>
+<h3><%=h @topic.subject %><div class="author_div"><%= @topic.user.username %></div></h3>
+<div class="topic_body">
+  <p><%= @topic.body %></p>
+</div>
+<div><%= @topic.updated_at.to_s(:db)%></div>
+<div class="reply_subject">
+  <ol>
+<% unless @replies.empty? %>
+  <% @replies.each do |reply| %>
+    <div class="reply_body">
+      <li><%= reply.subject %><div class="author_div"><%= reply.user.username %></div></li>
+      <p><%= reply.body %></p>
+      <%= reply.updated_at.to_s(:db) %>
+    </div>
+  <% end %>
+</ol>
+</div>
+  <%= will_paginate @replies %>
+<% end %>
+
+<h3>回复</h3>
+<%= render :partial => @reply = Reply.new, :locals => { :button_name => '回复' } %>
+<% if can_edit? %>
+  <%= link_to '编辑', edit_forum_topic_path(@forum, @topic) %>
+<% end %>

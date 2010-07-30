@@ -1,0 +1,8 @@
+<% form_for([@topic, @reply]) do |f| %>
+    <h3>标题</h3>
+    <%= f.text_field :subject %>
+    <h3>正文</h3>
+    <%= f.text_area :body, :class => 'rich_text_editor' %>
+    <%= f.submit button_name %>
+<% end %>
+

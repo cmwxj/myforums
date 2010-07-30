@@ -1,0 +1,19 @@
+<h1>登录</h1>  
+<% form_for @user_session do |form| %>  
+<%= form.error_messages %>  
+<fieldset>
+  <legend>个人信息</legend>
+  <div class="form_row">  
+    <%= form.label :username, "用户名" %>  
+    <%= form.text_field :username %>  
+  </div>  
+  <div class="form_row">  
+    <%= form.label :password, "密码" %>  
+    <%= form.password_field :password %>  
+  </div>  
+  <div class="form_row">  
+    <%= form.submit "提交" %>  
+  </div>  
+</fieldset>  
+<% end %>  
+

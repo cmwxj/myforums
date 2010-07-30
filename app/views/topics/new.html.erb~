@@ -1,0 +1,7 @@
+<h1>发表新主题</h1>
+<%= error_messages_for :topic %>
+<%= render :partial => @topic, :locals => {:button_name => "发表"} %>
+
+
+
+<%= link_to 'Back', topics_path %>

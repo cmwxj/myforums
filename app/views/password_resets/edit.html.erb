@@ -1,0 +1,18 @@
+<h1>更改密码</h1>
+ 
+<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
+  <%= f.error_messages %>
+  <fieldset>
+  <legend>你的密码</legend>
+  <div class="form_row">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  </div>
+  <div class="form_row">
+  <%= f.label :confirmation %>
+  <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit "更新密码并登录" %>
+  </fieldset>
+<% end %>
+

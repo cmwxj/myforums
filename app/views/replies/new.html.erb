@@ -1,0 +1,8 @@
+<h1>新建回复</h1>
+
+<%= error_messages_for :reply %>
+
+<%= render :partial => @reply, :locals => { :button_name => "回复" } %>
+
+<%= link_to '返回', replies_path %>
+

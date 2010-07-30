@@ -1,0 +1,27 @@
+<h1>论坛版块列表</h1>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>描述</th>
+    <th>显示</th>
+    <th>编辑</th>
+    <th>删除</th>
+  </tr>
+
+<% @forums.each do |forum| %>
+  <tr>
+    <td><%=h forum.name %></td>
+    <td><%=h forum.description %></td>
+    <td><%= link_to '显示', forum %></td>
+    <% if is_admin? %>
+      <td><%= link_to '编辑', edit_forum_path(forum) %></td>
+      <td><%= link_to '删除', forum, :confirm => '确实要删除吗？', :method => :delete %></td>
+  <% end %>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @forums %>
+<% if is_admin? %>
+  <span><%= link_to '新建版块', new_forum_path %></span>
+<% end %>

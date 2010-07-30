@@ -1,0 +1,5 @@
+<h1>编辑主题</h1>
+<%= error_messages_for :topic %>
+<%= render :partial => @topic, :locals => {:button_name => "提交"} %>
+<%= link_to 'Show', [@forum, @topic] %> |
+<%= link_to 'Back', topics_path %>

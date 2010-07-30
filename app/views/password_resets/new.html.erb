@@ -1,0 +1,17 @@
+<!--<h1>forget the password</h1>-->
+ 
+<p>填写下表，重置密码的指令会发送至你的邮箱。</p>
+ 
+<% form_tag password_resets_path do %>
+  <fieldset>
+  <legend>Email地址</legend>
+  <div class="form_row">
+    <label>Email:</label>
+    <%= text_field_tag "email" %>
+  </div>
+  <div class="form_row">
+    <%= submit_tag "密码重置" %>
+  </div>
+  </fieldset>
+<% end %>
+

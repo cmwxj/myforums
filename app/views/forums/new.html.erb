@@ -1,0 +1,16 @@
+<h1>新建版块</h1>
+
+<% form_for(@forum) do |f| %>
+  <%= f.error_messages %>
+   <div class="form_row">
+    <%= f.label :名称 %>
+    <%= f.text_field :name %>
+  </div>
+  <div><%= f.label :描述 %></div>
+    <%= f.text_area :description %>
+   <div class="form_row">
+     <%= f.submit '创建' %>
+   </div>
+<% end %>
+
+<%= link_to '返回', forums_path %>

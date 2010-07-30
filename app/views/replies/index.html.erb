@@ -1,0 +1,26 @@
+<h1>Listing replies</h1>
+
+<table>
+  <tr>
+    <th>Topic</th>
+    <th>User</th>
+    <th>Subject</th>
+    <th>Body</th>
+  </tr>
+
+<% @replies.each do |reply| %>
+  <tr>
+    <td><%=h reply.topic %></td>
+    <td><%=h reply.user %></td>
+    <td><%=h reply.subject %></td>
+    <td><%=h reply.body %></td>
+    <td><%= link_to '显示', reply %></td>
+    <td><%= link_to '编辑', edit_reply_path(reply) %></td>
+    <td><%= link_to '删除', reply, :confirm => '确实要删除吗？', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新建回复', new_reply_path %>

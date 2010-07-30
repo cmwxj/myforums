@@ -1,0 +1,24 @@
+<div class="forum_div">
+  <h1>论坛</h1>
+  <h2>名称：<%=h @forum.name %> - <%=h @forum.description %></h2>
+</div>
+<% unless @topics.empty? %>
+  <div class="topic_div">
+    <h3>主题列表：</h3>
+  <ol>
+    <% @topics.each do |topic| %>
+      <li><%= link_to topic.subject, [@forum, topic] %><div class="author_div"><%= topic.user.username %></div></li>
+    <% end %>
+    <%= will_paginate @topics %>
+  </ol>
+  </div>
+<% end%>
+<% if logged_in? %>
+  <div class="new_post">
+  <h3>新建主题</h3>
+  <%= render :partial => @topic = Topic.new, :locals => {:button_name => "创建"} %>
+  </div>
+<% end %>
+<% if is_admin? %>
+  <span><%= link_to '编辑', edit_forum_path(@forum) %></span>
+<% end %>
